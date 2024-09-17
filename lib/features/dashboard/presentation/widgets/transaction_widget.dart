@@ -1,9 +1,9 @@
 import 'package:dashboard/core/app_colors.dart';
 import 'package:flutter/material.dart';
 
-Widget transactionWidget() => Container(
+Widget transactionWidget(Size size) => Container(
   height: 265.59,
-  width: 730,
+  width: size.width > 500 ? 730 : size.width * 0.95,
   decoration: BoxDecoration(
     color: AppColors.kWhiteColor,
     borderRadius: BorderRadius.circular(5),
@@ -50,11 +50,11 @@ Widget transactionWidget() => Container(
       ),
       //header
       Row(
-        children: const [
+        children: [
           SizedBox(
-            width: 178.55,
+            width: size.width > 500 ? 178.55 : (size.width - 60) / 3,
             height: 30.39,
-            child: Text(
+            child: const Text(
               'TWZ TOKENS',
               style: TextStyle(
                   fontSize: 12,
@@ -64,9 +64,9 @@ Widget transactionWidget() => Container(
             ),
           ),
           SizedBox(
-            width: 155.56,
+            width: size.width > 500 ? 155.56 : 141.09,
             height: 30.39,
-            child: Text(
+            child: const Text(
               'AMOUNT',
               style: TextStyle(
                   fontSize: 12,
@@ -75,7 +75,7 @@ Widget transactionWidget() => Container(
               ),
             ),
           ),
-          SizedBox(
+          if(size.width > 735) const SizedBox(
             width: 245.89,
             height: 30.39,
             child: Text(
@@ -94,7 +94,7 @@ Widget transactionWidget() => Container(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            width: 178.55,
+            width: size.width > 500 ? 178.55 : (size.width - 60) / 3,
             height: 15,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -113,7 +113,7 @@ Widget transactionWidget() => Container(
             ),
           ),
           SizedBox(
-            width: 155.56,
+            width: size.width > 500 ? 155.56 : (size.width - 60) / 3,
             height: 15,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -138,7 +138,7 @@ Widget transactionWidget() => Container(
               ],
             ),
           ),
-          const SizedBox(
+          if(size.width > 735) const SizedBox(
             width: 245.89,
             height: 15,
             child: Text(
@@ -151,12 +151,12 @@ Widget transactionWidget() => Container(
                 ),
             )
           ),
-          Container(
+          Expanded(child: Container(
             height: 30,
             width: 90,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              border: Border.all(color: AppColors.borderGreenColor, width: 1)
+                borderRadius: BorderRadius.circular(5),
+                border: Border.all(color: AppColors.borderGreenColor, width: 1)
             ),
             child: const Center(
               child: Text(
@@ -168,7 +168,7 @@ Widget transactionWidget() => Container(
                 ),
               ),
             ),
-          )
+          ))
         ],
       ),
       const SizedBox(
@@ -178,7 +178,7 @@ Widget transactionWidget() => Container(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            width: 178.55,
+            width: size.width > 500 ? 178.55 : (size.width - 60) / 3,
             height: 15,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -197,7 +197,7 @@ Widget transactionWidget() => Container(
             ),
           ),
           SizedBox(
-            width: 155.56,
+            width: size.width > 500 ? 155.56 : (size.width - 60) / 3,
             height: 15,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -222,7 +222,7 @@ Widget transactionWidget() => Container(
               ],
             ),
           ),
-          const SizedBox(
+          if(size.width > 735) const  SizedBox(
               width: 245.89,
               height: 15,
               child: Text(
@@ -235,7 +235,7 @@ Widget transactionWidget() => Container(
                 ),
               )
           ),
-          Container(
+          Expanded(child: Container(
             height: 30,
             width: 90,
             decoration: BoxDecoration(
@@ -252,7 +252,7 @@ Widget transactionWidget() => Container(
                 ),
               ),
             ),
-          )
+          ))
         ],
       ),
       const SizedBox(
@@ -262,7 +262,7 @@ Widget transactionWidget() => Container(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            width: 178.55,
+            width: size.width > 500 ? 178.55 : (size.width - 60) / 3,
             height: 15,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -281,7 +281,7 @@ Widget transactionWidget() => Container(
             ),
           ),
           SizedBox(
-            width: 155.56,
+            width: size.width > 500 ? 155.56 : (size.width - 60) / 3,
             height: 15,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -306,7 +306,7 @@ Widget transactionWidget() => Container(
               ],
             ),
           ),
-          const SizedBox(
+          if(size.width > 735) const  SizedBox(
               width: 245.89,
               height: 15,
               child: Text(
@@ -319,7 +319,7 @@ Widget transactionWidget() => Container(
                 ),
               )
           ),
-          Container(
+          Expanded(child: Container(
             height: 30,
             width: 90,
             decoration: BoxDecoration(
@@ -336,7 +336,7 @@ Widget transactionWidget() => Container(
                 ),
               ),
             ),
-          )
+          ))
         ],
       ),
     ],
